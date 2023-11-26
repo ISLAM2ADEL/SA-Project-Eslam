@@ -79,7 +79,7 @@ $results = $auth ->Selectuser($number,$header);
       <?php for ($i = 0; $i < $number; $i++) {
         echo '<div class="col-xl-4 col-md-6"><div class="post-item position-relative h-100">';
 
-              echo'<div class="post-img position-relative overflow-hidden"><img src="'.$results[$i]['image'].'" style="width:500px;height:320px"class="img-fluid" alt=""><span class="post-date">December 12</span></div>';
+              echo'<div class="post-img position-relative overflow-hidden"><img src="'.$results[$i]['image'].'" style="width:500px;height:320px"class="img-fluid" alt=""><span class="post-date">'.$results[$i]['date'].'</span></div>';
 
               echo'<div class="post-content d-flex flex-column"><h3 class="post-title">'.$results[$i]['name'].'</h3>';
 

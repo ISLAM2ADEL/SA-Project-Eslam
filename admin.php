@@ -3,8 +3,8 @@ require_once "authcontroller/Authcontroller.php";
 $auth = new AuthController;
 $number=0;
 $results = $auth ->SelectHall($number);
-if(isset($_POST["movieName"])&&isset($_POST["description"])&&isset($_POST["category"])&&isset($_POST["Hall"])&&isset($_POST["quantity"])&&isset($_POST["timeSlot"])&&isset($_POST["image"])&&isset($_POST["link"])){
-  if(!empty($_POST["movieName"])&&!empty($_POST["description"])&&!empty($_POST["category"])&&!empty($_POST["Hall"])&&!empty($_POST["quantity"])&&!empty($_POST["timeSlot"])&&!empty($_POST["image"])&&!empty($_POST["link"])){
+if(isset($_POST["movieName"])&&isset($_POST["description"])&&isset($_POST["category"])&&isset($_POST["Hall"])&&isset($_POST["quantity"])&&isset($_POST["date"])&&isset($_POST["timeSlot"])&&isset($_POST["image"])&&isset($_POST["link"])){
+  if(!empty($_POST["movieName"])&&!empty($_POST["description"])&&!empty($_POST["category"])&&!empty($_POST["Hall"])&&!empty($_POST["quantity"])&&!empty($_POST["date"])&&!empty($_POST["timeSlot"])&&!empty($_POST["image"])&&!empty($_POST["link"])){
     $name = $_POST["movieName"];
     $des = $_POST["description"];
     if($_POST["category"]=='Movies'){
@@ -21,10 +21,16 @@ if(isset($_POST["movieName"])&&isset($_POST["description"])&&isset($_POST["categ
     }
     $hall = $_POST["Hall"];
     $price = $_POST["quantity"];
+    $date=$_POST["date"];
     $time = $_POST["timeSlot"];
     $image= $_POST["image"];
     $link= $_POST["link"];
-    $auth->admin($name,$des,$cat,$hall,$price,$time,$image,$link);
+    if($auth->admin($name,$des,$cat,$hall,$price,$date,$time,$image,$link)){
+      echo "<script>alert('Added Successfully');window.location='admin.php';</script>";
+    }
+    else{
+      echo "<script>alert('Failed to add movie');window.location='admin.php';</script>";
+    }
   }
 }
 ?>
@@ -155,6 +161,14 @@ if(isset($_POST["movieName"])&&isset($_POST["description"])&&isset($_POST["categ
       </td>
       <td>
         <input type="number" id="quantity" name="quantity" min="30" max="100" style="width:400px; height:23px;">
+      </td>
+    </tr>
+    <tr style="border-bottom: 3px solid #ccc;">
+      <td style="border-right: 3px solid #ccc;">
+        <label for="quantity" style="color:red; font-size:20px; font-weight:bold;">Day Date :</label>
+      </td>
+      <td>
+        <input type="date" id="date" name="date" style="width:400px; height:23px;">
       </td>
     </tr>
     <tr style="border-bottom: 3px solid #ccc;">

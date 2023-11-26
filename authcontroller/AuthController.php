@@ -64,16 +64,25 @@ class AuthController
     }
     
 
-public function admin($name,$des,$cat,$hall,$price,$time,$image,$link){
+public function admin($name,$des,$cat,$hall,$price,$date,$time,$image,$link){
     
     $this->db= new dbcontroller ;
     if($this->db->openConnection()){
-        $sql = "insert into admin (name,description,category,Hname,price,time,image,link) values ('$name','$des','$cat','$hall','$price','$time','$image','$link')";
-        try{$stmt = $this->db->insert($sql);
-            return true;}
-            catch(Exception $e){
-                return false;
+        // Assuming $date is a string representing the date in a specific format (e.g., 'Y-m-d')
+        $dateFormatted = date('Y-m-d H:i:s', strtotime($date)); // Format it to 'Y-m-d H:i:s'
+        $sql1="select * from `admin` where time='$time'and Hname='$hall' and date='$dateFormatted'";
+        $stmt1 = $this->db->select($sql1);
+        if ($stmt1 == null) {
+            $sql = "insert into admin (name,description,category,Hname,price,date,time,image,link) values ('$name','$des','$cat','$hall','$price','$dateFormatted','$time','$image','$link')";
+            try{$stmt = $this->db->insert($sql);
+                return true;}
+                catch(Exception $e){
+                    return false;
+                }
             }
+        else {
+            return false;
+        }
     }
 }
 
@@ -132,7 +141,7 @@ public function Selectuser(&$num,$header){
         $sql1="select COUNT(*) from admin where category='$newheader'";
         $res= $this->db->select($sql1);
         $num = $res[0]["COUNT(*)"];
-        $sql2= "select `name`,`description`,`Hname`,`time`,`price`,`image`,`link` from `admin` where category='$newheader'";
+        $sql2= "select `name`,`description`,`Hname`,`time`,`price`,`date`,`image`,`link` from `admin` where category='$newheader'";
         return $this->db->select($sql2);
 }
 }
@@ -257,6 +266,38 @@ public function insertTick( $del1,$del2,$del3,$del4){
         $del6=$result[0]["distination"];
         $sql = "insert into `ticket` (`trip_no`,`start`,`end`, `source`, `destination`,`price`) VALUES ('$del1', '$del2','$del3','$del5','$del6' ,'$del4')";
         $this->db->insert($sql);
+
+}
+}
+public function my_ticket($user){
+    $this->db= new dbcontroller ;
+    if($this->db->openConnection()){
+        $sql = "select ticket.id,ticket.ticket_num,admin.name,admin.description,admin.Hname,admin.price,admin.time,admin.image from ticket join admin on ticket.movie_id=admin.id where ticket.users_id=$user;";
+       try{
+        $stmt = $this->db->select($sql);
+        return $stmt;
+        }
+        catch(Exception $e){
+            echo "fsfdsdfsdf";
+            return $ar[1][2] ;
+        }
+        
+}
+else {
+    echo "connection false" ;
+}
+}
+public function del_tic ($ticket_id){
+    $this->db= new dbcontroller ;
+   
+    if($this->db->openConnection()){
+        $sql = "delete from `ticket` where `id`=$ticket_id";
+        try{
+          $stmt=$this->db->delete($sql);
+        }catch (Exception $e){
+            
+echo "dfsfsdfsdf";
+        }
 
 }
 }

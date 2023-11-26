@@ -1,3 +1,6 @@
+<?php
+$header=basename($_SERVER['PHP_SELF']);//movies.php
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,10 +20,12 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          
-          <li><a href="admin.php" class="active">Admin</a></li>
-          <li><a href="Add.php">Add Halls</a></li>
-          <li><a href="delete.php">Delete customer</a></li>
+        <?php
+    echo '<li><a href="admin.php" ' . ($header == 'admin.php' ? 'class="active"' : '') . '>Admin</a></li>';
+    echo '<li><a href="Add.php" ' . ($header == 'Add.php' ? 'class="active"' : '') . '>Add Halls</a></li>';
+    echo '<li><a href="delete.php" ' . ($header == 'delete.php' ? 'class="active"' : '') . '>Delete customer</a></li>';
+?>
+
       </nav><!-- .navbar -->
 
     </div>

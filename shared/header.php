@@ -1,3 +1,6 @@
+<?php
+$header=basename($_SERVER['PHP_SELF']);//movies.php
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +20,16 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          
-          <li><a href="movies.php" class="active">movies</a></li>
-          <li><a href="shows.php">TV Shows</a></li>
-          <li><a href="plays.php">Live plays</a></li>
-          <li><a href="Standup.php">Standup Comedy</a></li>
-          <li><a href="about.php">About</a></li>
+        <?php
+    echo '<li><a href="movies.php" ' . ($header == 'movies.php' ? 'class="active"' : '') . '>Movies</a></li>';
+    echo '<li><a href="shows.php" ' . ($header == 'shows.php' ? 'class="active"' : '') . '>TV Shows</a></li>';
+    echo '<li><a href="plays.php" ' . ($header == 'plays.php' ? 'class="active"' : '') . '>Live Plays</a></li>';
+    echo '<li><a href="Standup.php" ' . ($header == 'Standup.php' ? 'class="active"' : '') . '>Standup Comedy</a></li>';
+    echo '<li><a href="refund.php" ' . ($header == 'refund.php' ? 'class="active"' : '') . '>My Ticket</a></li>';
+    echo '<li><a href="about.php" ' . ($header == 'about.php' ? 'class="active"' : '') . '>About</a></li>';
+    ?>
+
+
       </nav><!-- .navbar -->
 
     </div>
