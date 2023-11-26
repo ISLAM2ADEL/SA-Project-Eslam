@@ -69,198 +69,45 @@ $results = $auth ->Selectuser($number,$header);
     </div><!-- End Breadcrumbs -->
 
     <!-- ======= Our Projects Section ======= -->
-    <style>
-      .swiper {
-    width: 95%;
-    height: 85%;
-    border-radius: 20px;
-    overflow: hidden;
-  }
+    
 
-  .swiper::selection{
-    user-select: none;
-  }
 
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-  .swiper-slide .image .black{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.0),rgba(0,0,0,0.9));
-  }
+      <div class="row gy-4 posts-list">
+      <?php for ($i = 0; $i < $number; $i++) {
+        echo '<div class="col-xl-4 col-md-6"><div class="post-item position-relative h-100">';
 
-  .swiper-slide .image .black h1{
-    font-size: 30px;
-    text-align: left;
-    position: relative;
-    top: 60%;
-    left: 5%;
-    color: #fff;
-  }
+              echo'<div class="post-img position-relative overflow-hidden"><img src="'.$results[$i]['image'].'" style="width:500px;height:320px"class="img-fluid" alt=""><span class="post-date">December 12</span></div>';
 
-  .swiper-slide .image .black .star{
-    color: #ffd500;
-    text-align: left;
-    font-size: 16px;
-    margin: 10px 0;
-    position: relative;
-    top: 60%;
-    left: 5%;
-  }
+              echo'<div class="post-content d-flex flex-column"><h3 class="post-title">'.$results[$i]['name'].'</h3>';
 
-  .swiper-slide .image .black p{
-    width: 550px;
-    text-align: justify;
-    font-size: 16px;
-    color: #cccccc;
-    margin: 10px 0;
-    position: relative;
-    top: 60%;
-    left: 5%;
-    line-height: 23px;
-    font-family: "Ink Free";
-  }
+                echo'<div class="meta d-flex align-items-center"><div class="d-flex align-items-center"><i class="bi bi-folder2"></i> <span class="ps-2">'.$results[$i]['description'].'</span></div></div>';
+                echo'<label style="margin-top:10px;">Hall Name : '.$results[$i]['Hname'].'</label>';
+                echo'<label style="margin-top:10px;">Time Begin & End : '.$results[$i]['time'].'</label>';
+                echo'<label style="margin-top:10px;">Price For One Ticket : '.$results[$i]['price'].'</label>';
+                echo'<hr>';
+                echo'<label for="name" class="form-label" style="margin-bottom:12px;">Number Of Tickets : </label> <input type="number" id="for1" name="quantity" min="1" max="20"></td>';
+                echo'<button type="submit" class="btn btn-warning" style=" margin-top:12px;">Submit</button>';
+                echo'<div>';
+                echo'<a href="'.$results[$i]['link'].'"style=" margin-top:10px;">
+                 <span>Trailer</span>  
+                 <i class="bi bi-arrow-right"></i>
+                </a>';
+                echo'</div>';
+              echo'</div>
 
-  .swiper-slide .image .black .genre{
-    text-align: left;
-    font-size: 16px;
-    margin: 13px 0;
-    position: relative;
-    top: 60%;
-    left: 5%;
-  }
+            </div>
+          </div><!-- End post list item -->';
+      }
+      ?>
+    </div><!-- End blog posts list -->
 
-  .swiper-slide .image .black .genre a.category{
-    background: #282931;
-    text-decoration: none;
-    color: #cccccc;
-    padding: 2px 7px;
-  }
+        
+</div>
+</section><!-- End Blog Section -->
 
-  .swiper-slide .image .black .genre a.category span{
-    color: #ffe100;
-  }
-
-  .swiper-slide .image .black .watch{
-    width: 700px;
-    text-align: left;
-    display: flex;
-    font-size: 16px;
-    margin: 10px 0;
-    position: relative;
-    top: 60%;
-    left: 5%;
-  }
-
-  .swiper-slide .image .black .watch i{
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    text-align: center;
-    background-color: #ffe100;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .swiper-slide .image .black .watch p{
-    position: relative;
-    left: 15px;
-    font-family: sans-serif;
-  }
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .swiper {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  table {
-        width: 500px; /* Set the width */
-        height: 400px; /* Set the height */
-    }
-
-    /* Style for the table cells (optional) */
-    table td {
-        padding: 10px;
-        border: 1px solid #000; /* Border for visualization */
-    }
-
-      </style>
-    <section >
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <?php for ($i = 0; $i < $number; $i++) {
-            echo '<div class="swiper-slide">';
-            echo    '<div class="row">';
-            echo'<table border="4" ><tbody><tr>';
-            echo      '<td rowspan="12">';
-            echo            '<img src="' . $results[$i]['image'] . '" style="width:400px; height=300px;"  alt="Half Page Image">';
-            echo        '</td>'        ;
-            echo '<td rowspan="2" colspan="2">';
-            if ($header == 'movies.php') {
-                echo 'Movie Information';
-            } else if ($header == 'shows.php') {
-                echo 'TV Show Information';
-            } else if ($header == 'plays.php') {
-                echo 'Live Play Information';
-            } else {
-                echo 'StandUp comedy Information';
-            }
-            echo '</td></tr>';            echo'        <tr><td></td></tr>';
-            echo'            <form action="#" method="GET">';
-            echo'<tr>';
-            echo'              <td><label for="name" class="form-label">Movie Name : </label></td>';
-            echo'             <td><select id="category" name="name" style="border:none; -webkit-appearance: none; pointer-events: none;"><option value="Movies">'.$results[$i]['name'].'</option></select></td><tr>';
-            echo'          <tr>';
-            echo'              <td><label for="name" class="form-label">Description : </label></td>';
-            echo'             <td><select id="category" name="des" style="border:none; -webkit-appearance: none; pointer-events: none;"> <option value="Movies">'.$results[$i]['description'].'</option></select></td></tr>';
-            echo'          <tr>';
-            echo'              <td><label for="name" class="form-label">Hall Name : </label></td>';
-            echo'              <td><select id="category" name="hall" style="border:none; -webkit-appearance: none; pointer-events: none;"><option value="Movies">'.$results[$i]['Hname'].'</option></select></td></tr>';
-            echo'          <tr>';
-            echo'              <td><label for="name" class="form-label">Movie Time : </label></td>';
-            echo'              <td><select id="category" name="time" style="border:none; -webkit-appearance: none; pointer-events: none;"><option value="Movies">'.$results[$i]['time'].'</option></select></td></tr>';
-            echo'          <tr>';
-            echo'              <td><label for="name" class="form-label">Price For One Ticket : </label><td>';
-            echo'              <select id="category" name="price" style="border:none; -webkit-appearance: none; pointer-events: none;"><option value="Movies">'.$results[$i]['price'].'</option></select></tr>';
-            echo'          <tr>';
-            echo'          <tr>';
-            echo'              <td><label for="name" class="form-label">Watch Trailer  </label></td>';
-            echo '<td><a href="' . $results[$i]['link'] . '"><i class="fab fa-youtube" style="font-size:28px; color:red"></i></a></td></tr>';
-            echo'          <tr>';
-            echo'              <td colspan="2"><label for="name" class="form-label">Number Of Tickets : </label>';
-            echo'             <input type="number" id="for1" name="quantity" min="1" max="20"></td>';
-            echo'          </tr>';
-            echo'</div>';
-            echo'          <tr>';
-            echo'          <td colspan="2"><button type="submit" class="btn btn-warning">Submit</button></td></tr>';
-            echo'</tbody></table>';
-            echo'      </form>';
-            echo'  </div>';
-            echo'</div>';
-            
-            echo'<!-- Other swiper slides here -->';
-          }
-            ?>
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
-</section>
 
   </main><!-- End #main -->
 
