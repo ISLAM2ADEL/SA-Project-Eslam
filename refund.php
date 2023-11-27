@@ -92,7 +92,7 @@ for ($x = 0; $x < $row; $x++) {
         $index = $x * $col + $i;
 
         if ($index < $ar_row) {
-            $id = $ar[$index]['id'];
+            $id1 = $ar[$index]['id'];
             $img = $ar[$index]['image'];
             $des = $ar[$index]['description'];
             $name = $ar[$index]['name'];
@@ -109,12 +109,12 @@ for ($x = 0; $x < $row; $x++) {
             echo "<p>Hall:  $hname</p>";
             echo "<p>Time:  $time</p>";
             echo "<p>Price: $price</p>";
-            echo "<p>Ticket ID: $id</p>";
+            echo "<p>Ticket ID: $id1</p>";
             echo "<p>Ticket Nummber: $ticket_num</p>";
             echo "<form action='refund.php' method ='post'>";
             
             // Add a hidden input field to carry the ticket ID
-            echo "<input type='hidden' name='ticket_id' value='$id'>";
+            echo "<input type='hidden' name='ticket_id' value='$id1'>";
             
             echo "<button type='submit' class='btn btn-warning'  style='margin-top: 10px;' formaction='refund.php'>Refund</button>";
             echo "</form>";

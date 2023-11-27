@@ -78,7 +78,6 @@ if(isset($_POST['quantity'])){
 
     <!-- ======= Services Section ======= -->
     <section id="blog" class="blog">
-    <form action="#" method="GET">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
       <div class="row gy-4 posts-list">
@@ -100,7 +99,7 @@ select {
 
         </style>
       <?php for ($i = 0; $i < $number; $i++) {
-        echo '<div class="col-xl-4 col-md-6"><form action"#" method="POST"><div class="post-item position-relative h-100">';
+        echo '<div class="col-xl-4 col-md-6"><form action"#" method="post"><div class="post-item position-relative h-100">';
         
               echo'<div class="post-img position-relative overflow-hidden"><img src="'.$results[$i]['image'].'" style="width:500px;height:320px"class="img-fluid" alt=""><select class="post-date" name="date" id="date"><option>' . $results[$i]['date'] . '</option></select></div>';
 
