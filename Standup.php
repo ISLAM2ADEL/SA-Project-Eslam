@@ -86,6 +86,7 @@ select {
     background-color: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
+    pointer-events: none;
     appearance: none;
     padding: 0; /* Adjust padding if necessary */
     font-family: inherit;

@@ -85,6 +85,7 @@ select {
     border: none;
     background-color: transparent;
     -webkit-appearance: none;
+    pointer-events: none;
     -moz-appearance: none;
     appearance: none;
     padding: 0; /* Adjust padding if necessary */

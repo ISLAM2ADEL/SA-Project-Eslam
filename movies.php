@@ -89,6 +89,7 @@ select {
     background-color: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
+    pointer-events: none;
     appearance: none;
     padding: 0; /* Adjust padding if necessary */
     font-family: inherit;
@@ -178,6 +179,10 @@ select {
         prevEl: ".swiper-button-prev",
       },
     });
+    function disableSelect(select) {
+  select.disabled = true;
+}
+
   </script>
   
   <script src="./assets/js/script.js"></script>
