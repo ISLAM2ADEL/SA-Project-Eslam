@@ -1,16 +1,4 @@
-<?php
-require_once "authcontroller/Authcontroller.php";
-$ticket_id=0;
-if(isset($_POST['ticket_id'])){
-  $ticket_id=$_POST['ticket_id'];
-  $auth=new AuthController;
-  $auth->del_tic($ticket_id);
 
-}
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,6 +45,17 @@ if(isset($_POST['ticket_id'])){
   <?php
   require_once "./shared/header.php"
   ?>
+  <?php
+require_once "authcontroller/Authcontroller.php";
+$ticket_id=0;
+if(isset($_POST['ticket_id'])){
+  $ticket_id=$_POST['ticket_id'];
+  $auth=new AuthController;
+  $auth->del_tic($ticket_id);
+
+}
+
+?>
 
   <main id="main">
 
@@ -79,9 +78,9 @@ if(isset($_POST['ticket_id'])){
 
       <?php
 require_once "authcontroller/Authcontroller.php";
-$user = 2;
+//$user = 2;
 $auth = new AuthController;
-$ar = $auth->my_ticket($user);
+$ar = $auth->my_ticket($id);
 $ar_row = count($ar);
 $col = 3; // Number of columns
 $row = ceil($ar_row / $col); // Use ceil to round up if there are remaining rows

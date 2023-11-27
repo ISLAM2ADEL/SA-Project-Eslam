@@ -4,7 +4,6 @@ require_once 'dbController.php';
 class AuthController
 {
     protected $db;
-
     //1. Open connection.
     //2. Run query & logic.
     //3. Close connection
@@ -13,8 +12,10 @@ class AuthController
         $this->db=new DBController;
         if($this->db->openConnection())
         {
-            $query="select * from users where username='$user' and password='$password'";
-            $stmt=$this->db->select($query);
+            $query1="select * from users where username='$user'";
+            $res=$this->db->select($query1);
+            $query2="select * from users where username='$user' and password='$password'";
+            $stmt=$this->db->select($query2);
             if($stmt===false)
             {
                 return 0;
@@ -27,10 +28,16 @@ class AuthController
                 }
                 else if($stmt[0]['username']==='admin')
                 {
+                    session_start();
+                    $_SESSION["id"]=$res[0]["id"];
+                    $_SESSION["username"]=$res[0]["username"];
                     $this->db->closeConnection();
                     return 2;
                 }
                 else{
+                    session_start();
+                    $_SESSION["id"]=$res[0]["id"];
+                    $_SESSION["username"]=$res[0]["username"];
                     $this->db->closeConnection();
                     return 1;
                 }
@@ -49,7 +56,13 @@ class AuthController
         if($this->db->openConnection())
         {
             $query="insert into users (username,password,telephone) values ('$name','$password','$phone')";
+            
             try{$stmt=$this->db->insert($query);
+                $query1="select * from users where username='$name'";
+                $res=$this->db->select($query1);
+                session_start();
+                    $_SESSION["id"]=$res[0]["id"];
+                    $_SESSION["username"]=$res[0]["username"];
             return true;}
             catch(Exception $e){
                 return false;
@@ -104,12 +117,33 @@ else {
     echo "connection false" ;
 }
 }
-public function sendReason(refund $ref){
+public function status($status ,$ticketno)
+    {
+        $db1= new dbcontroller;
+        $result1=$db1->connection();
+        if(!empty($result1)){
+            if($status=="accept"){
+                
+                $query="update refund set status = ' accepted ' WHERE ticket_no=$ticketno;";
+                $db1->connection->query($query);
+
+            }
+            else if($status=="decline"){
+                $query="update refund set status = ' declined ' WHERE ticket_no=$ticketno;";
+                $db1->connection->query($query);
+            }
+
+
+        }
+
+    }
+public function insrtick($name,$hall,$time,$date,$quantity,$id){
     $this->db= new dbcontroller ;
-    $date = new DateTime('now');
     if($this->db->openConnection()){
-        
-        $sql2 = "insert into refund (ticket_no, reosn, amount, date) VALUES ('{$ref->getTicket_no()}', '{$ref->getReason()}', 100, '".$date->format('Y-m-d H:i:s')."')";
+        $sql1="select `id` from admin where name='$name'and Hname='$hall'and time='$time'and date='$date'";
+        $res1=$this->db->select($sql1);
+        $mvid=$res1[0]["id"];
+        $sql2 = "insert into ticket (movie_id, users_id, ticket_num) VALUES ('$mvid','$id','$quantity')";
         $this->db->insert($sql2);
 }
 }
@@ -123,6 +157,8 @@ public function SelectHall(&$num){
         return $this->db->select($sql2);
 }
 }
+
+
 public function Selectuser(&$num,$header){
     $this->db= new dbcontroller ;
     if($this->db->openConnection()){

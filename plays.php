@@ -1,10 +1,3 @@
-<?php
-require_once "authcontroller/Authcontroller.php";
-$auth = new AuthController;
-$number=0;
-$header=basename($_SERVER['PHP_SELF']);//movies.php
-$results = $auth ->Selectuser($number,$header);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +44,23 @@ $results = $auth ->Selectuser($number,$header);
   <?php
   require_once "./shared/header.php"
   ?>
-
+<?php
+require_once "authcontroller/Authcontroller.php";
+$auth = new AuthController;
+$number=0;
+$header=basename($_SERVER['PHP_SELF']);//movies.php
+$results = $auth ->Selectuser($number,$header);
+if(isset($_POST['quantity'])){
+  if(!empty($_POST['quantity'])){
+    $quantity= $_POST['quantity'];
+    $name= $_POST['name'];
+    $hall= $_POST['hallname'];
+    $time= $_POST['time'];
+    $date= $_POST['date'];
+    $sub=$auth->insrtick($name,$hall,$time,$date,$quantity,$id);
+  }
+}
+?>
    <!-- ======= Breadcrumbs ======= -->
    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/05.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
@@ -70,16 +79,31 @@ $results = $auth ->Selectuser($number,$header);
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
       <div class="row gy-4 posts-list">
+      <style>
+          /* Remove default styles for select */
+select {
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0; /* Adjust padding if necessary */
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+}
+</style>
       <?php for ($i = 0; $i < $number; $i++) {
-        echo '<div class="col-xl-4 col-md-6"><div class="post-item position-relative h-100">';
+        echo '<div class="col-xl-4 col-md-6"><form action"#" method="POST"><div class="post-item position-relative h-100">';
+        
+              echo'<div class="post-img position-relative overflow-hidden"><img src="'.$results[$i]['image'].'" style="width:500px;height:320px"class="img-fluid" alt=""><select class="post-date" name="date" id="date"><option>' . $results[$i]['date'] . '</option></select></div>';
 
-              echo'<div class="post-img position-relative overflow-hidden"><img src="'.$results[$i]['image'].'" style="width:500px;height:320px"class="img-fluid" alt=""><span class="post-date">'.$results[$i]['date'].'</span></div>';
-
-              echo'<div class="post-content d-flex flex-column"><h3 class="post-title">'.$results[$i]['name'].'</h3>';
+              echo'<div class="post-content d-flex flex-column"><select class ="post-title" name="name" id="name"><option>' . $results[$i]['name'] . '</option></select></h3>';
 
                 echo'<div class="meta d-flex align-items-center"><div class="d-flex align-items-center"><i class="bi bi-folder2"></i> <span class="ps-2">'.$results[$i]['description'].'</span></div></div>';
-                echo'<label style="margin-top:10px;">Hall Name : '.$results[$i]['Hname'].'</label>';
-                echo'<label style="margin-top:10px;">Time Begin & End : '.$results[$i]['time'].'</label>';
+                echo '<label style="margin-top:10px;">Hall Name :  <select name="hallname" id="hallname"><option>' . $results[$i]['Hname'] . '</option></select></label>';
+                echo'<label style="margin-top:10px;">Time Begin & End : <select name="time" id="time"><option>' . $results[$i]['time'] . '</option></select></label>';
                 echo'<label style="margin-top:10px;">Price For One Ticket : '.$results[$i]['price'].'</label>';
                 echo'<hr>';
                 echo'<label for="name" class="form-label" style="margin-bottom:12px;">Number Of Tickets : </label> <input type="number" id="for1" name="quantity" min="1" max="20"></td>';
@@ -90,9 +114,11 @@ $results = $auth ->Selectuser($number,$header);
                  <i class="bi bi-arrow-right"></i>
                 </a>';
                 echo'</div>';
+                
               echo'</div>
-
+              </form>
             </div>
+            
           </div><!-- End post list item -->';
       }
       ?>
