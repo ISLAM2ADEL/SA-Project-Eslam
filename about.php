@@ -71,7 +71,7 @@
             <div class="post-item position-relative h-100">
 
               <div class="post-img position-relative overflow-hidden">
-                <img src="assets/img/blog/6.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/diaa2.jpg" class="img-fluid" alt="">
                
               </div>
 
@@ -81,159 +81,31 @@
 
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">comedy</span>
+                     <span class="ps-2">team leader </span>
                   </div>
                 </div>
 
-                <p>
-                Meet Amr Elgamal, the comedy maestro who turns ordinary moments into uproarious tales. With his unique wit and charm, Amr takes center stage, leaving audiences in stitches and craving more laughter
+              </div>
+
+            </div>
+          </div><!-- End post list item -->
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets/img/team/eslam2.jpg" class="img-fluid" alt="">
                
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-                </p>
-
-                <hr>
-
-                <a href="blog-details.html" class="readmore stretched-link">
-                 <span>Ticket know</span>  
-                 <i class="bi bi-arrow-right"></i>
-                 <span style="float: right; margin-left: 170px;">120 EGP</span>
-                </a>
-
-              </div>
-
-            </div>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="assets/img/blog/7.jpg" class="img-fluid" alt="">
-                <span class="post-date">December 30</span>
               </div>
 
               <div class="post-content d-flex flex-column">
 
-                <h3 class="post-title"> MOHAMED SALEM  </h3>
+                <h3 class="post-title">Eslam Adel Ahmed AbdelRazek </h3>
 
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">comedy</span>
+                    <span class="ps-2">comedy</span>
                   </div>
                 </div>
-
-                <p>
-                Step into the world of hilarity with Mohamed Salem, a stand-up sensation who crafts comedy from everyday absurdities. Get ready to embark on a laughter-filled journey as Mohamed's wit and humor take center stage.
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-              </p>
-
-                <hr>
-
-                <a href="blog-details.html" class="readmore stretched-link">
-                 <span>Ticket know</span>  
-                 <i class="bi bi-arrow-right"></i>
-                 <span style="float: right; margin-left: 170px;">300 EGP</span>
-                </a>
-
-              </div>
-
-            </div>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="assets/img/blog/8.jpg" class="img-fluid" alt="">
-                <span class="post-date">December 23</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">  MOHAMED HELMY  </h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">comedy</span>
-                  </div>
-                </div>
-
-                <p>
-                Meet the uproarious Mohamed Helmy, a stand-up maestro with a knack for turning life's quirks into comedic gold. Brace yourself for a night of laughter as Mohamed takes the spotlight, delivering humor that hits home."
-
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-                </p>
-
-                <hr>
-
-                <a href="blog-details.html" class="readmore stretched-link">
-                 <span>Ticket know</span>  
-                 <i class="bi bi-arrow-right"></i>
-                 <span style="float: right; margin-left: 170px;">400 EGP</span>
-                </a>
-
-              </div>
-
-            </div>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="assets/img/blog/9.jpg" class="img-fluid" alt="">
-                <span class="post-date">December 25</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title"> TAHA ELDOSOKY  </h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">comedy</span>
-                  </div>
-                </div>
-
-                <p>
-                Get ready to embark on a laughter-filled journey with Taha Eldosoky, a stand-up sensation known for his witty observations and infectious humor. Brace yourself for an unforgettable night of comedy that transcends boundaries and leaves you in stitches.
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                
-                
-
-
-
-                </p>
-
-                <hr>
-
-                <a href="blog-details.html" class="readmore stretched-link">
-                 <span>Ticket know</span>  
-                 <i class="bi bi-arrow-right"></i>
-                 <span style="float: right; margin-left: 170px;">350 EGP</span>
-                </a>
 
               </div>
 
@@ -243,87 +115,92 @@
             <div class="post-item position-relative h-100">
 
               <div class="post-img position-relative overflow-hidden">
-                <img src="assets/img/blog/10.jpg" class="img-fluid" alt="">
-                <span class="post-date">December 1</span>
+                <img src="assets/img/team/reiko2.jpg" class="img-fluid" alt="">
+               
               </div>
 
               <div class="post-content d-flex flex-column">
 
-                <h3 class="post-title">    WALID ELMOJAZI   </h3>
+                <h3 class="post-title">Abdelrahman </h3>
 
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">comedy</span>
+                    <span class="ps-2">comedy</span>
                   </div>
                 </div>
-
-                <p>
-                Experience the comedic brilliance of Walid Elmojazi, a stand-up virtuoso whose sharp wit and humorous insights guarantee an evening filled with laughter. Get ready for a comedic ride that navigates through life's quirks and absurdities with unmatched hilarity.
-
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-                </p>
-
-                <hr>
-
-                <a href="blog-details.html" class="readmore stretched-link">
-                 <span>Ticket know</span>  
-                 <i class="bi bi-arrow-right"></i>
-                 <span style="float: right; margin-left: 170px;">250 EGP</span>
-                </a>
 
               </div>
 
             </div>
           </div><!-- End post list item -->
-
           <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
 
               <div class="post-img position-relative overflow-hidden">
-                <img src="assets/img/blog/11.jpg" class="img-fluid" alt="">
-                <span class="post-date">December 22</span>
+                <img src="assets/img/team/steven2.jpg" class="img-fluid" alt="">
+               
               </div>
 
               <div class="post-content d-flex flex-column">
 
-                <h3 class="post-title">  YEHIA ELSADY </h3>
+                <h3 class="post-title">Steven</h3>
 
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">comedy</span>
+                     <span class="ps-2">comedy</span>
                   </div>
                 </div>
-
-                <p>
-                Yehia Elsady, the comedic maestro, takes the stage with uproarious tales and witty observations. Brace yourself for a night of non-stop laughter as he transforms everyday situations into comedic gold with his unique style and charm.
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-
-                </p>
-
-                <hr>
-
-                <a href="blog-details.html" class="readmore stretched-link">
-                 <span>Ticket know</span>  
-                 <i class="bi bi-arrow-right"></i>
-                 <span style="float: right; margin-left: 170px;">300 EGP</span>
-                </a>
 
               </div>
 
             </div>
           </div><!-- End post list item -->
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets/img/team/tarek.jpg" class="img-fluid" alt="">
+               
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">Tarek</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                     <span class="ps-2">comedy</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div><!-- End post list item -->
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets/img/team/ahmed.jpg" class="img-fluid" alt="">
+               
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">Ahmed Yossry </h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <span class="ps-2">comedy</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div><!-- End post list item -->
+          
+
           
 
         </div><!-- End blog posts list -->
