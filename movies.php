@@ -74,7 +74,7 @@ if(isset($_POST['quantity'])){
         </ol>
 
       </div>
-    </div><!-- End Breadcrumbs -->
+    </div>
 
     <!-- ======= Services Section ======= -->
     <section id="blog" class="blog">
